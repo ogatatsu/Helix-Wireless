@@ -21,10 +21,9 @@
   https://learn.adafruit.com/bluefruit-nrf52-feather-learning-guide/flashing-the-bootloader
   https://qiita.com/ogatatsu@github/items/37f4888c885c4e287df1
 
-- BL652-breakoutをHelix PCBの白枠線内とは逆の方に刺す。
+- BL652-breakoutを右側、左側共にHelix PCBの白枠線内とは逆の方に刺す。(画像の赤い方)
   ![2](./images/2.jpg)
-  (画像の赤い方)
-  
+
 - ArduinoをインストールしてボードマネージャーからFeather nRF52用の物をインストールしておく。
 
   参考URL
