@@ -31,6 +31,6 @@
   https://learn.adafruit.com/bluefruit-nrf52-feather-learning-guide/arduino-bsp-setup
 
 - ArduinoのライブラリマネージャからBounce2ライブラリをインストールする。
-- 右側のボードにはSlave用のファームウェア、左側にはMaster用のファームウェアを書き込む。
+- Arduino IDEで.inoファイルを開いて右側のボードにはSlave用のファームウェア、左側にはMaster用のファームウェアを書き込む。
 
 ## キーカスタマイズ
