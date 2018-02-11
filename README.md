@@ -14,15 +14,15 @@
   https://learn.adafruit.com/bluefruit-nrf52-feather-learning-guide/flashing-the-bootloader
   https://qiita.com/ogatatsu@github/items/37f4888c885c4e287df1
 
-- BL652-breakoutをHelix PCBの白枠線内とは逆の方に刺す
+- BL652-breakoutをHelix PCBの白枠線内とは逆の方に刺す。
 
-- ArduinoをインストールしてボードマネージャーからFeather nRF52用の物をインストールしておく
+- ArduinoをインストールしてボードマネージャーからFeather nRF52用の物をインストールしておく。
 
   参考URL
 
   https://learn.adafruit.com/bluefruit-nrf52-feather-learning-guide/arduino-bsp-setup
 
 - ArduinoのライブラリマネージャからBounce2ライブラリをインストールする。
-- 右側のボードにはSlaveのファームウェア、左側にはMasterのファームウェアを書き込む。
+- 右側のボードにはSlave用のファームウェア、左側にはMaster用のファームウェアを書き込む。
 
 ## キーカスタマイズ
