@@ -115,3 +115,16 @@ static Key keymap[] = {
     {2, CK(_CTRL | _ALT, _DELETE)},
 }
 ```
+
+### MTコマンド
+```c++
+MT(Modifier modifier, uint8_t keycode)
+```
+スイッチを押した後リリースせずにに別のスイッチを押したときは第1引数の修飾キー、スイッチ単体でタップすると第2引数の通常キーとして機能するコマンド、以下の例で1を押した後離さずに2を押すと`SHIFT`キー（結果として`SHIFT+A`）、1を押して何もせずにそのまま離すと`SPACE`キーのキーコードが送出される。
+
+```c++
+static Key keymap[] = {
+    {1, MT(_SHIFT, _SPACE)},
+    {2, NK(_A)},
+}
+```
