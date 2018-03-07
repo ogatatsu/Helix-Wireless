@@ -70,16 +70,19 @@ static Key keymap[] = {
 
 ## コマンド一覧
 ### NOPコマンド
-何もしないコマンド、以下の例ではID1のスイッチを押しても何も起こらない。
+```
+Command *NOP
+```
+何もしないコマンド、以下の例では1のスイッチを押しても何も起こらない。
 ```c++
 static Key keymap[] = {
     {1, NOP},
-}
+};
 ```
 
 ### NKコマンド
 ```c++
-NK(uint8_t keycode)
+Command *NK(uint8_t keycode)
 ```
 通常キー用のコマンド、以下の例では1のスイッチはA,2はB,3はCのキーコードを送出する。
 (`keycode.h`ファイルにキーコードに対して`_A`などの名前が割り当てられているのでそちらも参照のこと。)
@@ -88,12 +91,12 @@ static Key keymap[] = {
     {1, NK(_A)},
     {2, NK(_B)},
     {3, NK(_C)},
-}
+};
 ```
 
 ### MOコマンド
 ```c++
-MO(Modifier modifier)
+Command *MO(Modifier modifier)
 ```
 修飾キー用のコマンド、以下の例では1のスイッチはSHIFTのキーコードを、2のスイッチはCTRLとSHIFTのキーコードを同時に送出する。
 修飾キーは`|`演算子で同時押しの組み合わせを表現できる。
@@ -101,30 +104,55 @@ MO(Modifier modifier)
 static Key keymap[] = {
     {1, MO(_SHIFT)},
     {2, MO(_CTRL | _SHIFT)},
-}
+};
 ```
 
 ### CKコマンド
 ```c++
-CK(Modifier modifier, uint8_t keycode)
+Command *CK(Modifier modifier, uint8_t keycode)
 ```
 コンビネーションキー用のコマンド、修飾キーと通常キーの同時押しを表現できる。以下の例は1のスイッチは`CTRL+C`、2のスイッチは`CTRL+ALT+DELETE`のキーコードを送出する。
 ```c++
 static Key keymap[] = {
     {1, CK(_CTRL, _C)},
     {2, CK(_CTRL | _ALT, _DELETE)},
-}
+};
 ```
 
 ### MTコマンド
 ```c++
-MT(Modifier modifier, uint8_t keycode)
+Command *MT(Modifier modifier, uint8_t keycode)
 ```
-スイッチを押した後リリースせずにに別のスイッチを押したときは第1引数の修飾キー、スイッチ単体でタップすると第2引数の通常キーとして機能するコマンド、以下の例で1を押した後離さずに2を押すと`SHIFT`キー（結果として`SHIFT+A`）、1を押して何もせずにそのまま離すと`SPACE`キーのキーコードが送出される。
+スイッチを押した後リリースせずにに別のスイッチを押したときは第1引数の修飾キー、スイッチ単体でタップすると第2引数の通常キーとして機能するコマンド、以下の例で1のスイッチを押した後離さずに2のスイッチを押すと`SHIFT`キー（結果として`SHIFT+A`）、1のスイッチを押して何もせずにそのまま離すと`SPACE`キーのキーコードが送出される。
 
 ```c++
 static Key keymap[] = {
     {1, MT(_SHIFT, _SPACE)},
     {2, NK(_A)},
-}
+};
 ```
+
+### OSMコマンド
+```c++
+Command *OSM(Modifier modifier)
+```
+スイッチを押して離すと次にスイッチを押した時に送出されるキーコードと同時に引数の修飾キーも送出される、スイッチを押して離さずに別のスイッチを押した場合は通常の修飾キーコマンドの様に動作する。下の例では1のスイッチを押して離した後に2のスイッチを押すと`SHIFT+A`のキーコードが送出される。
+```c++
+static Key keymap[] = {
+    {1, OSM(_SHIFT)},
+    {2, NK(_A)},
+};
+```
+
+### Lコマンド
+```c++
+Command *L(Command *first, Commands... rest)
+```
+レイヤーコマンド、現在のレイヤーによって動作させるコマンドを変更する。以下の例では現在のレイヤーが0の時は`A`レイヤーが1の時は`B`レイヤーが2の時は`C`のキーコードを送出する。
+```c++
+static Key keymap[] = {
+    {1, L(NK(_A), NK(_B), NK(_C))},
+};
+```
+
+続く
