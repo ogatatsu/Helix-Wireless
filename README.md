@@ -147,9 +147,10 @@ static Key keymap[] = {
 ```c++
 Command *L(Command *first, Commands... rest)
 ```
-レイヤーコマンド、現在のレイヤーによって動作させるコマンドを変更する。以下の例では`SW1`を押すと現在のレイヤーが0の時は`A`、レイヤーが1の時は`B`、レイヤーが2の時は`C`のキーコードを送出する。
+レイヤー分けをするコマンド、現在のレイヤーの状態によって動作させるコマンドを変更する。以下の例では`SW1`を押すとレイヤー2がONの時は`C`、2がOFFで1がONの時は`B`、2と1がOFFの時は`A`のキーコードを送出する、0レイヤーはデフォルトでONとなる。
 ```c++
 static Key keymap[] = {
+    //    0     , 1     , 2
     {1, L(NK(_A), NK(_B), NK(_C))},
 };
 ```
@@ -178,4 +179,16 @@ static Key keymap[] = {
     {2, TL(1)},
 };
 ```
+### LTコマンド
+```c++
+Command *LT(uint8_t layerNumber, uint8_t keycode)
+```
+MTコマンドのレイヤー版。
+
+### OSLコマンド
+```c++
+Command *OSL(uint8_t layerNumber)
+```
+OSMコマンドのレイヤー版。
+
 続く
