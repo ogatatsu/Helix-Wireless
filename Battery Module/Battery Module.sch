@@ -1,0 +1,305 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:switches
+LIBS:relays
+LIBS:motors
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:Battery Module-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Battery_Cell BT1
+U 1 1 5A9655B9
+P 4200 3000
+F 0 "BT1" H 4300 3100 50  0000 L CNN
+F 1 "Battery_Cell" H 4300 3000 50  0000 L CNN
+F 2 "Footprints:BHSD-2032-SM" V 4200 3060 50  0001 C CNN
+F 3 "" V 4200 3060 50  0001 C CNN
+	1    4200 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Battery_Cell BT2
+U 1 1 5A965629
+P 4950 3000
+F 0 "BT2" H 5050 3100 50  0000 L CNN
+F 1 "Battery_Cell" H 5050 3000 50  0000 L CNN
+F 2 "Footprints:BHSD-2032-SM" V 4950 3060 50  0001 C CNN
+F 3 "" V 4950 3060 50  0001 C CNN
+	1    4950 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Battery_Cell BT3
+U 1 1 5A965665
+P 5700 3000
+F 0 "BT3" H 5800 3100 50  0000 L CNN
+F 1 "Battery_Cell" H 5800 3000 50  0000 L CNN
+F 2 "Footprints:BHSD-2032-SM" V 5700 3060 50  0001 C CNN
+F 3 "" V 5700 3060 50  0001 C CNN
+	1    5700 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 2700 4200 2800
+Wire Wire Line
+	4950 2700 4950 2800
+Wire Wire Line
+	5700 2700 5700 2800
+Wire Wire Line
+	4200 2400 4200 2150
+Wire Wire Line
+	4200 2150 5950 2150
+Wire Wire Line
+	4950 2400 4950 2150
+Connection ~ 4950 2150
+Wire Wire Line
+	5700 2150 5700 2400
+Connection ~ 5700 2150
+Wire Wire Line
+	4200 3100 4200 3250
+Wire Wire Line
+	4200 3250 6500 3250
+Wire Wire Line
+	5700 3100 5700 3250
+Connection ~ 5700 3250
+Wire Wire Line
+	4950 3100 4950 3250
+Connection ~ 4950 3250
+$Comp
+L Conn_01x01 VDD1
+U 1 1 5A965A5F
+P 6700 2250
+F 0 "VDD1" H 6700 2350 50  0000 C CNN
+F 1 "Conn_01x01" H 6700 2150 50  0000 C CNN
+F 2 "Footprints:2060" H 6700 2250 50  0001 C CNN
+F 3 "" H 6700 2250 50  0001 C CNN
+	1    6700 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Conn_01x01 GND1
+U 1 1 5A965B39
+P 6700 3250
+F 0 "GND1" H 6700 3350 50  0000 C CNN
+F 1 "Conn_01x01" H 6700 3150 50  0000 C CNN
+F 2 "Footprints:2060" H 6700 3250 50  0001 C CNN
+F 3 "" H 6700 3250 50  0001 C CNN
+	1    6700 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L D_Schottky D1
+U 1 1 5A966236
+P 4200 2550
+F 0 "D1" H 4200 2650 50  0000 C CNN
+F 1 "D_Schottky" H 4200 2450 50  0000 C CNN
+F 2 "Footprints:SS2040FL" H 4200 2550 50  0001 C CNN
+F 3 "" H 4200 2550 50  0001 C CNN
+	1    4200 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L D_Schottky D2
+U 1 1 5A96648C
+P 4950 2550
+F 0 "D2" H 4950 2650 50  0000 C CNN
+F 1 "D_Schottky" H 4950 2450 50  0000 C CNN
+F 2 "Footprints:SS2040FL" H 4950 2550 50  0001 C CNN
+F 3 "" H 4950 2550 50  0001 C CNN
+	1    4950 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L D_Schottky D3
+U 1 1 5A9664BB
+P 5700 2550
+F 0 "D3" H 5700 2650 50  0000 C CNN
+F 1 "D_Schottky" H 5700 2450 50  0000 C CNN
+F 2 "Footprints:SS2040FL" H 5700 2550 50  0001 C CNN
+F 3 "" H 5700 2550 50  0001 C CNN
+	1    5700 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L SW_SPDT SW1
+U 1 1 5AA5D364
+P 6150 2150
+F 0 "SW1" H 6150 2320 50  0000 C CNN
+F 1 "SW_SPDT" H 6150 1950 50  0000 C CNN
+F 2 "Footprints:SSSS811101" H 6150 2150 50  0001 C CNN
+F 3 "" H 6150 2150 50  0001 C CNN
+	1    6150 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Battery_Cell BT4
+U 1 1 5AAA03B9
+P 4200 4850
+F 0 "BT4" H 4300 4950 50  0000 L CNN
+F 1 "Battery_Cell" H 4300 4850 50  0000 L CNN
+F 2 "Footprints:BHSD-2032-SM" V 4200 4910 50  0001 C CNN
+F 3 "" V 4200 4910 50  0001 C CNN
+	1    4200 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Battery_Cell BT5
+U 1 1 5AAA03BF
+P 4950 4850
+F 0 "BT5" H 5050 4950 50  0000 L CNN
+F 1 "Battery_Cell" H 5050 4850 50  0000 L CNN
+F 2 "Footprints:BHSD-2032-SM" V 4950 4910 50  0001 C CNN
+F 3 "" V 4950 4910 50  0001 C CNN
+	1    4950 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Battery_Cell BT6
+U 1 1 5AAA03C5
+P 5700 4850
+F 0 "BT6" H 5800 4950 50  0000 L CNN
+F 1 "Battery_Cell" H 5800 4850 50  0000 L CNN
+F 2 "Footprints:BHSD-2032-SM" V 5700 4910 50  0001 C CNN
+F 3 "" V 5700 4910 50  0001 C CNN
+	1    5700 4850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 4550 4200 4650
+Wire Wire Line
+	4950 4550 4950 4650
+Wire Wire Line
+	5700 4550 5700 4650
+Wire Wire Line
+	4200 4250 4200 4000
+Wire Wire Line
+	4200 4000 5950 4000
+Wire Wire Line
+	4950 4250 4950 4000
+Connection ~ 4950 4000
+Wire Wire Line
+	5700 4000 5700 4250
+Connection ~ 5700 4000
+Wire Wire Line
+	4200 4950 4200 5100
+Wire Wire Line
+	4200 5100 6500 5100
+Wire Wire Line
+	5700 4950 5700 5100
+Connection ~ 5700 5100
+Wire Wire Line
+	4950 4950 4950 5100
+Connection ~ 4950 5100
+$Comp
+L Conn_01x01 VDD2
+U 1 1 5AAA03DA
+P 6700 4100
+F 0 "VDD2" H 6700 4200 50  0000 C CNN
+F 1 "Conn_01x01" H 6700 4000 50  0000 C CNN
+F 2 "Footprints:2060" H 6700 4100 50  0001 C CNN
+F 3 "" H 6700 4100 50  0001 C CNN
+	1    6700 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Conn_01x01 GND2
+U 1 1 5AAA03E0
+P 6700 5100
+F 0 "GND2" H 6700 5200 50  0000 C CNN
+F 1 "Conn_01x01" H 6700 5000 50  0000 C CNN
+F 2 "Footprints:2060" H 6700 5100 50  0001 C CNN
+F 3 "" H 6700 5100 50  0001 C CNN
+	1    6700 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L D_Schottky D4
+U 1 1 5AAA03E6
+P 4200 4400
+F 0 "D4" H 4200 4500 50  0000 C CNN
+F 1 "D_Schottky" H 4200 4300 50  0000 C CNN
+F 2 "Footprints:SS2040FL" H 4200 4400 50  0001 C CNN
+F 3 "" H 4200 4400 50  0001 C CNN
+	1    4200 4400
+	0    1    1    0   
+$EndComp
+$Comp
+L D_Schottky D5
+U 1 1 5AAA03EC
+P 4950 4400
+F 0 "D5" H 4950 4500 50  0000 C CNN
+F 1 "D_Schottky" H 4950 4300 50  0000 C CNN
+F 2 "Footprints:SS2040FL" H 4950 4400 50  0001 C CNN
+F 3 "" H 4950 4400 50  0001 C CNN
+	1    4950 4400
+	0    1    1    0   
+$EndComp
+$Comp
+L D_Schottky D6
+U 1 1 5AAA03F2
+P 5700 4400
+F 0 "D6" H 5700 4500 50  0000 C CNN
+F 1 "D_Schottky" H 5700 4300 50  0000 C CNN
+F 2 "Footprints:SS2040FL" H 5700 4400 50  0001 C CNN
+F 3 "" H 5700 4400 50  0001 C CNN
+	1    5700 4400
+	0    1    1    0   
+$EndComp
+$Comp
+L SW_SPDT SW2
+U 1 1 5AAA03F8
+P 6150 4000
+F 0 "SW2" H 6150 4170 50  0000 C CNN
+F 1 "SW_SPDT" H 6150 3800 50  0000 C CNN
+F 2 "Footprints:SSSS811101" H 6150 4000 50  0001 C CNN
+F 3 "" H 6150 4000 50  0001 C CNN
+	1    6150 4000
+	1    0    0    -1  
+$EndComp
+NoConn ~ 6350 2050
+Wire Wire Line
+	6350 2250 6500 2250
+Wire Wire Line
+	6500 4100 6350 4100
+NoConn ~ 6350 3900
+$EndSCHEMATC
